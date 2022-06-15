@@ -1,18 +1,10 @@
-﻿@using Lab5.Models;
-
+﻿﻿@using Lab5.Models;
 @{
     ViewBag.Title = "Planetas";
 }
 
 <!DOCTYPE html>
 <html>
-<head>
-    <title>
-        Listado de planetas
-    </title>
-    <meta charset="utf-8" />
-</head>
-
 <body>
     <div>
         <h1>
@@ -21,14 +13,29 @@
     </div>
 
     <div class="seccion_1" id="s1">
-        @foreach (PlanetaModel planeta in ViewBag.planetas)
+        @foreach (var planeta in ViewBag.planetas)
         {
-            <h3><b>Ficha del planeta: </b>@planeta.id</h3>
-            <p>Nombre: @planeta.nombre</p>
-            <p>Tipo: @planeta.tipo</p>
-            <p>Numero de anillos: @planeta.numeroAnillos</p>
+            <hr />
+            <h4><strong>Ficha del planeta: </strong>@planeta.id</h4>
+            <p>
+                Nombre: @planeta.nombre<br />
+                Tipo: @planeta.tipo<br />
+                Numero de anillos: @planeta.numeroAnillos<br />
+            </p>
+
+            @Html.ActionLink("Modificar informacion", "editarPlaneta",
+                               new { identificador = planeta.id },
+                               new
+                               {
+                                   @class = "btn btn alert-info",
+                                   @onclick = "return confirm ('¿Quiere modificar este planeta?');"
+                               })
+
+            @Html.ActionLink("Contenido Digital", "accederArchivo",
+                       new { identificador = planeta.id },
+                       new { @class = "btn btn alert-info" });
+            <hr />
         }
     </div>
 </body>
 </html>
-
