@@ -21,7 +21,7 @@ namespace Lab5.Controllers
       
         public ActionResult crearPlaneta()
         {
-            return View();
+            return View("crearPlaneta");
         }
 
        
@@ -51,9 +51,9 @@ namespace Lab5.Controllers
             }
         }
 
-        
+
         [HttpGet]
-        public ActionResult editarPlaneta(int? identificador)
+        public ActionResult editarPlaneta(int ? identificador)
         {
             ActionResult vista;
             try
@@ -75,6 +75,7 @@ namespace Lab5.Controllers
             }
             return vista;
         }
+
 
         [HttpPost]
         public ActionResult editarPlaneta(PlanetaModel planeta)
