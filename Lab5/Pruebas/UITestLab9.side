@@ -1,0 +1,74 @@
+{
+  "id": "5ed44268-5026-4816-9658-ef73761d2753",
+  "version": "2.0",
+  "name": "UITestLab9",
+  "url": "https://localhost:44386",
+  "tests": [{
+    "id": "27ce532c-e5bc-4d35-9696-cfe2a7bfdfe3",
+    "name": "PrimeraPrueba",
+    "commands": [{
+      "id": "8911f21b-377c-455b-aa8d-e9d5834cbd78",
+      "comment": "",
+      "command": "open",
+      "target": "/Home/Index",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "da6710eb-7b73-47e4-afb6-9a1cef30916e",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1020x576",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "f43db8eb-c77f-44bb-9f58-1eebd0d23028",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.lead",
+      "targets": [
+        ["css=.lead", "css:finder"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.')]", "xpath:innerText"]
+      ],
+      "value": "ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript."
+    }, {
+      "id": "f0125411-d9f1-4d3b-af11-ca266f709b50",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Nombre de la aplicación",
+      "targets": [
+        ["linkText=Nombre de la aplicación", "linkText"],
+        ["css=.navbar-brand", "css:finder"],
+        ["xpath=//a[contains(text(),'Nombre de la aplicación')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '/')]", "xpath:href"],
+        ["xpath=//a", "xpath:position"],
+        ["xpath=//a[contains(.,'Nombre de la aplicación')]", "xpath:innerText"]
+      ],
+      "value": "Nombre de la aplicación"
+    }, {
+      "id": "95365b65-42e5-403b-af4d-3e6747768f3a",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Learn more »",
+      "targets": [
+        ["linkText=Learn more »", "linkText"],
+        ["css=.btn-primary", "css:finder"],
+        ["xpath=//a[contains(text(),'Learn more »')]", "xpath:link"],
+        ["xpath=//a[contains(@href, 'https://asp.net')]", "xpath:href"],
+        ["xpath=//p[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Learn more »')]", "xpath:innerText"]
+      ],
+      "value": "Learn more »"
+    }]
+  }],
+  "suites": [{
+    "id": "72a79582-5a24-4797-a8e1-f892bec95136",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["27ce532c-e5bc-4d35-9696-cfe2a7bfdfe3"]
+  }],
+  "urls": ["https://localhost:44386/"],
+  "plugins": []
+}
